@@ -12,7 +12,8 @@ Duas formas de pegar o material: clonar este repositório (vem a skill pronta) o
 |---|---|
 | `PASSO-A-PASSO-COMPLETO.md` | Documento mestre. Comece por ele |
 | `prompts/` | Os prompts de cada etapa, na ordem do fluxo, pra copiar e colar |
-| `skills/automind-ai-startup/` | O mesmo fluxo empacotado como skill do Claude Code |
+| `skills/automind-ai-startup/` | O fluxo inteiro (spec → fases → validação → vistoria → segurança → deploy) como skill |
+| `skills/frontend-premium/` | Skill de frontend: marca real, tokens, aprovação da 1ª tela e verificação visual automática |
 | `COMO-CRIAR-SKILLS.md` | Como criar, testar e tornar obrigatória a sua própria skill |
 
 ### Ordem dos prompts
@@ -38,10 +39,31 @@ Com o Claude Code já funcionando:
 ```bash
 git clone https://github.com/startupautomindai-dot/claude-code-do-zero-ao-deploy.git
 mkdir -p ~/.claude/skills
-cp -r claude-code-do-zero-ao-deploy/skills/automind-ai-startup ~/.claude/skills/
+cp -r claude-code-do-zero-ao-deploy/skills/* ~/.claude/skills/
 ```
 
-Abra o Claude Code de novo. A skill entra sozinha quando você começa um projeto novo, pede uma feature, uma vistoria, uma auditoria ou vai fazer deploy. Pra chamar na mão: `/automind-ai-startup`.
+Abra o Claude Code de novo. As skills entram sozinhas:
+- `automind-ai-startup`: projeto novo, feature, vistoria, auditoria, deploy. Na mão: `/automind-ai-startup`.
+- `frontend-premium`: qualquer tela, site, landing ou painel. Na mão: `/frontend-premium`.
+
+Pra garantir que elas tenham prioridade sobre outras skills instaladas, veja o item 5 de [`COMO-CRIAR-SKILLS.md`](COMO-CRIAR-SKILLS.md).
+
+### Verificação visual (vem com a `frontend-premium`)
+
+```bash
+pip install playwright && playwright install chromium
+python3 ~/.claude/skills/frontend-premium/scripts/verificar-visual.py https://seu-site.com.br
+```
+
+Gera prints em celular, tablet e desktop e aponta estouro de largura, erro de console, imagem quebrada, contraste abaixo do WCAG AA, emoji como ícone e sinais de "cara de IA".
+
+### Skills de terceiros que combinam com a `frontend-premium`
+
+- [`frontend-design`](https://github.com/anthropics/skills) (Anthropic): direção estética quando o projeto não tem marca.
+- [`web-design-guidelines` e `react-best-practices`](https://github.com/vercel-labs/agent-skills) (Vercel): auditoria de UI e boas práticas de React/Next.js.
+- [`shadcn`](https://github.com/shadcn-ui/ui/tree/main/skills/shadcn): componentes React prontos e acessíveis.
+
+Leia antes de instalar. O `web-design-guidelines` baixa as regras da internet a cada uso.
 
 Quer criar a sua? Veja [`COMO-CRIAR-SKILLS.md`](COMO-CRIAR-SKILLS.md).
 
