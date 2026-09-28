@@ -21,6 +21,7 @@ Código só começa depois de spec sem lacunas, é construído uma fase por vez,
 | Validação ok | Vistoria só leitura (padrão) ou com correção (se autorizado) | `references/05a-vistoria-so-leitura.md` / `references/05b-vistoria-com-correcao.md` |
 | Antes de produção | Auditoria de segurança em fases | `references/06-seguranca.md` |
 | Última checagem antes do deploy | Veredito final A–F com bloqueadores | `references/07-veredito-final.md` |
+| Sistema com cliente usando: antes de TODA publicação | Ambiente de ensaio + robô de jornada (2 aparelhos, dados reais) + portão de publicação + vigia diário | `references/08-ensaio-robo-vigia.md` |
 
 Abra a referência da etapa e siga o protocolo dela. Não resuma de memória.
 
@@ -41,6 +42,7 @@ A mesma sequência, com o escopo reduzido à feature:
 - Segurança e vistoria só leitura: **não modificar nada sem confirmação**. Achado crítico: parar e avisar na hora.
 - Relatórios em `work-log/` (validação, auditoria, auditoria-final), com status ✅/⚠️/❌ e severidade 🔴/🟠/🟡/🔵.
 - Qualquer 🔴 aberto = veredito "NÃO PRONTO", sem exceção.
+- Sistema em uso: **o cliente não é o testador.** Publicar só pelo portão (testes + robô de jornada no ensaio); toda reclamação vira passo do robô; vigia diário avisa antes do cliente. Teste contra backend simulado não conta como teste de ponta a ponta.
 
 ## Erros comuns
 
@@ -51,3 +53,6 @@ A mesma sequência, com o escopo reduzido à feature:
 | Declarar pronto porque o build passou | Build passar ≠ funcionar. Rodar `04` clicando nas telas |
 | Tela só com o estado de sucesso | Todos os estados de UI especificados e implementados |
 | Auditoria de segurança que "roda meia dúzia de comandos e declara seguro" | Arquivo por arquivo, cada achado com arquivo+linha, exploração e correção |
+| Testes passando só contra mock, cliente achando bug em sincronização/dados reais | Robô de jornada no ensaio com 2 aparelhos e dados reais (`08`) |
+| Publicar com scp/cópia manual | Só pelo portão de publicação (`08`) |
+| Corrigir a reclamação e dizer "resolvido" | Virar passo do robô, rodar, colar o placar |
