@@ -6,6 +6,13 @@ Uso:
 
 Precisa de: pip install playwright && playwright install chromium
 
+Variáveis opcionais:
+    CHROMIUM_PATH=/caminho/chrome   usa um Chromium já baixado (ex.: o do Playwright do Node)
+    STORAGE_STATE=sessao.json       abre a página já logada (arquivo salvo por context.storageState()
+                                    do Playwright) — pra verificar telas que exigem login
+    ESPERAR_SELETOR='[data-x]'      espera esse seletor aparecer antes do print (tela que carrega dado)
+    ESPERAR_ATE=load                 critério do goto (padrão networkidle; use load em app que sincroniza sozinho)
+
 Aponta: estouro de largura (scroll horizontal), erros de console, imagens
 quebradas, texto com contraste abaixo de WCAG AA, emoji usado como ícone,
 e os sinais de "cara de IA" como ATENÇÃO (cantos muito arredondados, sombra
@@ -110,19 +117,24 @@ def main():
     with sync_playwright() as p:
         exe = os.environ.get("CHROMIUM_PATH")
         browser = p.chromium.launch(executable_path=exe) if exe else p.chromium.launch()
+        storage = os.environ.get("STORAGE_STATE")
+        seletor = os.environ.get("ESPERAR_SELETOR")
         for nome, largura in LARGURAS:
-            page = browser.new_page(viewport={"width": largura, "height": 900})
+            contexto = browser.new_context(viewport={"width": largura, "height": 900}, storage_state=storage) if storage else browser.new_context(viewport={"width": largura, "height": 900})
+            page = contexto.new_page()
             erros = []
             page.on("console", lambda m, e=erros: e.append(m.text[:150]) if m.type == "error" else None)
             page.on("pageerror", lambda ex, e=erros: e.append(str(ex)[:150]))
             falhas = []
             page.on("requestfailed", lambda r, f=falhas: f.append(r.url[-80:]))
-            page.goto(url, wait_until="networkidle", timeout=45000)
+            page.goto(url, wait_until=os.environ.get("ESPERAR_ATE", "networkidle"), timeout=45000)
+            if seletor:
+                page.wait_for_selector(seletor, timeout=30000)
             page.wait_for_timeout(600)
             arquivo = os.path.join(saida, f"{nome}-{largura}.png")
             page.screenshot(path=arquivo, full_page=True)
             a = page.evaluate(AUDITORIA_JS)
-            page.close()
+            contexto.close()
 
             print(f"\n=== {nome} ({largura}px) → {arquivo}")
             def item(ok, texto, detalhes=(), estilo=False):
