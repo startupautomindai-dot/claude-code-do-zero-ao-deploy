@@ -30,6 +30,8 @@ Você não precisa saber programar. Só precisa seguir a ordem dos arquivos e co
 | 00-CONTEXTO-INFRAESTRUTURA.md | Descreve seu ambiente (GitHub, VPS, Supabase, n8n, Cloudflare, e-mail) |
 | 00b-ACESSO-CLAUDE-CODE.md | Ensina a dar acesso de verdade a cada serviço (GitHub, VPS, Cloudflare, n8n, Supabase) e traz um prompt pra testar tudo |
 | 00c-GUIA-DE-BOLSO-STACK.md | Para que serve cada linguagem e ferramenta (HTML/CSS/JS, React, Next, PWA, Node, Python, n8n, Supabase) e como escolher a stack de cada projeto |
+| 00d-QUAL-LLM-PARA-CADA-FUNCAO.md | Qual modelo usar em cada função (grátis onde errar não custa, forte onde vira decisão) e o que aprendemos testando |
+| 10-CENTRAL-DE-MONITORAMENTO.md | Etapa 10: a central que vigia o sistema em produção (camada barata sem LLM + triagem grátis + Agente Chefe no Claude) com o prompt pra construir |
 | 01-PROMPT-DEEPSEEK.md | Instrução para o DeepSeek gerar o rascunho |
 | 02-ARQUITETO-SENIOR-REFORMULADOR.md | Instrução para o Claude reformular o rascunho |
 | 03-PROMPT-CLAUDE-IA.md | Instrução para o Claude gerar o workspace do Claude Code |
@@ -72,6 +74,7 @@ PROMPTS-LIVE/
 ├── 00-CONTEXTO-INFRAESTRUTURA.md
 ├── 00b-ACESSO-CLAUDE-CODE.md
 ├── 00c-GUIA-DE-BOLSO-STACK.md
+├── 00d-QUAL-LLM-PARA-CADA-FUNCAO.md
 ├── 01-PROMPT-DEEPSEEK.md
 ├── 02-ARQUITETO-SENIOR-REFORMULADOR.md
 ├── 03-PROMPT-CLAUDE-IA.md
@@ -81,6 +84,7 @@ PROMPTS-LIVE/
 ├── 06-PROMPT-SEGURANCA.md
 ├── 07-AUDITORIA-GERAL-FINAL.md
 ├── 08-PROMPT-MAIS-USADOS.md
+├── 10-CENTRAL-DE-MONITORAMENTO.md
 └── GUIA-DE-USO.md
 
 ---
@@ -510,6 +514,30 @@ Acesse o domínio e faça um teste completo do fluxo principal.
 
 ---
 
+## 👁️ ETAPA 10 — CENTRAL DE MONITORAMENTO (depois do deploy)
+
+**Objetivo:** o sistema vigiando o sistema, pra você saber do erro antes do cliente.
+
+### Passo 10.1 — Leia o 10-CENTRAL-DE-MONITORAMENTO.md
+
+Duas camadas: a barata (scripts sem LLM, a cada poucos minutos, custo zero) grava tudo num histórico com protocolo; só quando aparece anomalia entra a cara: triagem com um LLM grátis do OpenRouter e decisão final com o Claude como "Agente Chefe", que devolve severidade, causa raiz, ação e, se for crítico, uma pergunta pra você. O 00d-QUAL-LLM-PARA-CADA-FUNCAO.md explica por que cada modelo fica onde fica.
+
+### Passo 10.2 — Pegue as duas chaves
+
+Uma chave grátis do OpenRouter (modelos `:free`) e uma chave da Anthropic. As duas vão em variável de ambiente, nunca no código.
+
+### Passo 10.3 — Cole o prompt da seção 3 no Claude Code
+
+Ele primeiro propõe a lista de monitores pro SEU sistema e espera sua aprovação; só então constrói processo, tabela de eventos, backend, painel com sirene e CIENTE, e o chat com o chefe. Exija o teste de cada monitor com a anomalia forçada antes de aceitar "pronto".
+
+### Passo 10.4 — Regra que não muda
+
+O monitor só avisa. Correção é você, com o relatório do chefe colado no Claude Code.
+
+✅ Etapa 10 concluída.
+
+---
+
 ## 📊 RESUMO VISUAL
 
 ETAPA 0 → PREPARAÇÃO (pasta + credenciais)
@@ -522,6 +550,7 @@ ETAPA 6 → CLAUDE CODE (05-VISTORIA-*)
 ETAPA 7 → CLAUDE CODE (06-PROMPT-SEGURANCA)
 ETAPA 8 → CLAUDE CODE (07-AUDITORIA-GERAL-FINAL)
 ETAPA 9 → DEPLOY (Cloudflare + VPS + n8n + DNS)
+ETAPA 10 → CENTRAL DE MONITORAMENTO (camada barata + LLM grátis + Agente Chefe)
 
 ---
 

@@ -26,6 +26,7 @@ Duas formas de pegar o material: clonar este repositório (vem a skill pronta) o
 | `00-contexto-infraestrutura.md` | Descrever a infra que você já tem | Anexar nos chats |
 | `00b-acesso-claude-code.md` | Dar acesso real ao Claude Code (GitHub, SSH, Cloudflare, n8n) | Terminal |
 | `00c-guia-de-bolso-stack.md` | Para que serve cada linguagem e ferramenta, e como escolher a stack | Ler antes da Etapa 1, anexar no chat |
+| `00d-qual-llm-para-cada-funcao.md` | Qual modelo usar em cada função e por quê (grátis × pago) | Ler antes da Etapa 1 e ao montar a Etapa 10 |
 | `01-prompt-deepseek.md` | Ideia → briefing estruturado | DeepSeek |
 | `02-arquiteto-senior-reformulador.md` | Briefing → spec sem lacunas | Claude Projects |
 | `03-prompt-claude-ia.md` | Spec → workspace do Claude Code (`CLAUDE.md` + fases) | Claude Projects |
@@ -34,6 +35,7 @@ Duas formas de pegar o material: clonar este repositório (vem a skill pronta) o
 | `06-prompt-seguranca.md` | Auditoria de segurança em fases | Claude Code |
 | `07-auditoria-geral-final.md` | Veredito final antes do deploy | Claude Code |
 | `08-prompt-mais-usados.md` | Consulta rápida de prompts de segurança | — |
+| `10-central-de-monitoramento.md` | Etapa 10: central de monitoramento (camada barata + triagem grátis + Agente Chefe) | Claude Code, depois do deploy |
 
 ## Instalar a skill
 
