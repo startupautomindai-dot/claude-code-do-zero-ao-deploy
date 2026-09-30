@@ -27,6 +27,7 @@ Duas formas de pegar o material: clonar este repositório (vem a skill pronta) o
 | `00b-acesso-claude-code.md` | Dar acesso real ao Claude Code (GitHub, SSH, Cloudflare, n8n) | Terminal |
 | `00c-guia-de-bolso-stack.md` | Para que serve cada linguagem e ferramenta, e como escolher a stack | Ler antes da Etapa 1, anexar no chat |
 | `00d-qual-llm-para-cada-funcao.md` | Qual modelo usar em cada função e por quê (grátis × pago) | Ler antes da Etapa 1 e ao montar a Etapa 10 |
+| `00e-pedir-ajuda-ao-claude.md` | Travou? Project "Ajudante da live" no claude.ai + frases prontas pra pedir ajuda | Qualquer etapa |
 | `01-prompt-deepseek.md` | Ideia → briefing estruturado | DeepSeek |
 | `02-arquiteto-senior-reformulador.md` | Briefing → spec sem lacunas | Claude Projects |
 | `03-prompt-claude-ia.md` | Spec → workspace do Claude Code (`CLAUDE.md` + fases) | Claude Projects |

@@ -20,6 +20,12 @@ Você não precisa saber programar. Só precisa seguir a ordem dos arquivos e co
 
 ---
 
+## 🆘 TRAVOU? PEDE AJUDA AO CLAUDE
+
+No começo vai travar, e é normal. Antes de qualquer etapa, abra o 00e-PEDIR-AJUDA-AO-CLAUDE.md: em 5 minutos você monta no claude.ai um Project "Ajudante da live" com este roteiro anexado, e nele estão as frases prontas pra pedir ajuda (erro em comando, arquivo que não sabe onde salvar, resposta estranha da IA, termo que não entendeu, perdeu o fio). Regra de ouro: cole o erro inteiro, diga a etapa, uma dúvida por vez, nunca cole senha.
+
+---
+
 ## 🎯 O QUE VOCÊ VAI PRECISAR
 
 ### Arquivos (todos estão na pasta PROMPTS-LIVE/)
@@ -30,6 +36,7 @@ Você não precisa saber programar. Só precisa seguir a ordem dos arquivos e co
 | 00-CONTEXTO-INFRAESTRUTURA.md | Descreve seu ambiente (GitHub, VPS, Supabase, n8n, Cloudflare, e-mail) |
 | 00b-ACESSO-CLAUDE-CODE.md | Ensina a dar acesso de verdade a cada serviço (GitHub, VPS, Cloudflare, n8n, Supabase) e traz um prompt pra testar tudo |
 | 00c-GUIA-DE-BOLSO-STACK.md | Para que serve cada linguagem e ferramenta (HTML/CSS/JS, React, Next, PWA, Node, Python, n8n, Supabase) e como escolher a stack de cada projeto |
+| 00e-PEDIR-AJUDA-AO-CLAUDE.md | Como montar o Project "Ajudante da live" no claude.ai e as frases prontas pra pedir ajuda quando travar |
 | 00d-QUAL-LLM-PARA-CADA-FUNCAO.md | Qual modelo usar em cada função (grátis onde errar não custa, forte onde vira decisão) e o que aprendemos testando |
 | 10-CENTRAL-DE-MONITORAMENTO.md | Etapa 10: a central que vigia o sistema em produção (camada barata sem LLM + triagem grátis + Agente Chefe no Claude) com o prompt pra construir |
 | 01-PROMPT-DEEPSEEK.md | Instrução para o DeepSeek gerar o rascunho |
@@ -75,6 +82,7 @@ PROMPTS-LIVE/
 ├── 00b-ACESSO-CLAUDE-CODE.md
 ├── 00c-GUIA-DE-BOLSO-STACK.md
 ├── 00d-QUAL-LLM-PARA-CADA-FUNCAO.md
+├── 00e-PEDIR-AJUDA-AO-CLAUDE.md
 ├── 01-PROMPT-DEEPSEEK.md
 ├── 02-ARQUITETO-SENIOR-REFORMULADOR.md
 ├── 03-PROMPT-CLAUDE-IA.md
