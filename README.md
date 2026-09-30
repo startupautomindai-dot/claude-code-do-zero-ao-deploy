@@ -14,6 +14,8 @@ Duas formas de pegar o material: clonar este repositório (vem a skill pronta) o
 | `prompts/` | Os prompts de cada etapa, na ordem do fluxo, pra copiar e colar |
 | `skills/automind-ai-startup/` | O fluxo inteiro (spec → fases → validação → vistoria → segurança → deploy) como skill |
 | `skills/frontend-premium/` | Skill de frontend: marca real, tokens, aprovação da 1ª tela e verificação visual automática |
+| `skills/full-platform-audit/` | Inspeção geral de plataforma: clica e testa cada controle de cada tela, em vez de só tirar print |
+| `skills/gptmaker-agent-design/` | Agentes na plataforma GPTMaker: mapa da doc oficial + 25 bugs reais encontrados e corrigidos em produção (behavior, intentions, MCP, canais, modelos e créditos) |
 | `COMO-CRIAR-SKILLS.md` | Como criar, testar e tornar obrigatória a sua própria skill |
 
 ### Ordem dos prompts
@@ -45,6 +47,8 @@ cp -r claude-code-do-zero-ao-deploy/skills/* ~/.claude/skills/
 Abra o Claude Code de novo. As skills entram sozinhas:
 - `automind-ai-startup`: projeto novo, feature, vistoria, auditoria, deploy. Na mão: `/automind-ai-startup`.
 - `frontend-premium`: qualquer tela, site, landing ou painel. Na mão: `/frontend-premium`.
+- `full-platform-audit`: "inspeção geral", "o que está pendente na plataforma".
+- `gptmaker-agent-design`: qualquer agente GPTMaker (criar, configurar, depurar, auditar).
 
 Pra garantir que elas tenham prioridade sobre outras skills instaladas, veja o item 5 de [`COMO-CRIAR-SKILLS.md`](COMO-CRIAR-SKILLS.md).
 
