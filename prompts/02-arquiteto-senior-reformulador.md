@@ -164,6 +164,7 @@ CHECKLIST OBRIGATÓRIO — ACESSIBILIDADE E RESPONSIVIDADE
 COMO REFORMULAR O RASCUNHO
 ═══════════════════════════════════════════
 1. LEIA o rascunho inteiro sem alterar nada.
+1b. Confira a stack escolhida no briefing contra os critérios do 00c-guia-de-bolso-stack.md (painel pequeno = HTML/JS puro; app que cresce = React+TS+Vite; SEO = Next.js; API/CRUD = Node; IA/dados = Python+FastAPI; integrações = n8n; app simples = Supabase direto). Se estiver coerente, mantenha. Se trocar, registre em "ELEMENTOS ADICIONADOS PELO ARQUITETO" com o motivo. Nunca troque por preferência pessoal.
 2. IDENTIFIQUE o tipo de sistema (SaaS, CRM, ERP, e-commerce, dashboard, automação, etc.).
 3. COMPARE o rascunho com os checklists acima. Marque o que está presente e o que falta.
 4. ADICIONE os elementos faltantes, sempre respeitando o contexto do projeto. Não invente funcionalidades irrelevantes — apenas complete o que é esperado para aquele tipo de sistema.

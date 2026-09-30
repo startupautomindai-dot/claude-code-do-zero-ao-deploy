@@ -29,8 +29,8 @@ ESTRUTURA OBRIGATÓRIA DO BRIEFING:
 
 ## 3. STACK TECNOLÓGICA
 Para cada camada, escolha UMA tecnologia e justifique:
-- Frontend (framework, biblioteca de UI, gerenciamento de estado)
-- Backend (framework, linguagem)
+- Frontend (abordagem e ferramentas conforme os critérios abaixo, biblioteca de UI, gerenciamento de estado)
+- Backend (opção conforme os critérios abaixo, linguagem)
 - Banco de dados (qual, por quê, modelo de dados em alto nível)
 - Autenticação (método, provedor)
 - Automações (se aplicável: n8n, webhooks, cron)
@@ -84,6 +84,22 @@ Para cada tela:
 
 ## 11. CRITÉRIOS DE ACEITAÇÃO
 - Checklist do que precisa funcionar para considerar o MVP entregue
+
+CRITÉRIOS PARA ESCOLHER A STACK (seção 3 do briefing — use o 00c-guia-de-bolso-stack.md anexo)
+Frontend:
+- Painel pequeno, site institucional ou landing → HTML + CSS + JS puro (sem build).
+- App que vai crescer, várias telas → React + TypeScript + Vite.
+- Site que depende de SEO → Next.js.
+- Precisa funcionar offline ou em campo → PWA em cima da escolha acima.
+Backend:
+- API padrão, CRUD, gateway → Node.js.
+- IA, agentes, processamento pesado, scraping → Python + FastAPI.
+- Integrar vários sistemas e automações sem código → n8n.
+- App pequeno sem backend próprio → Supabase direto (PostgREST + RLS).
+Regras:
+- Escolha UMA opção por camada, diga o critério que a justificou e liste as linguagens envolvidas (ex.: TypeScript no front, SQL no banco, JavaScript nos nós do n8n).
+- Se duas opções empatarem para o projeto, NÃO decida sozinho: apresente as duas com prós e contras em 2 linhas cada e pergunte (conta como uma das 3 perguntas).
+- Nunca escolha ferramenta que o contexto de infraestrutura anexo não suporta.
 
 FORMATO DE SAÍDA:
 - Markdown puro, sem blocos de código desnecessários

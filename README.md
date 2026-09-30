@@ -25,6 +25,7 @@ Duas formas de pegar o material: clonar este repositório (vem a skill pronta) o
 | `00a-infra-do-zero.md` | VPS, Claude Code (Ubuntu/WSL, Opus 5.5), Supabase, n8n | Terminal + VPS |
 | `00-contexto-infraestrutura.md` | Descrever a infra que você já tem | Anexar nos chats |
 | `00b-acesso-claude-code.md` | Dar acesso real ao Claude Code (GitHub, SSH, Cloudflare, n8n) | Terminal |
+| `00c-guia-de-bolso-stack.md` | Para que serve cada linguagem e ferramenta, e como escolher a stack | Ler antes da Etapa 1, anexar no chat |
 | `01-prompt-deepseek.md` | Ideia → briefing estruturado | DeepSeek |
 | `02-arquiteto-senior-reformulador.md` | Briefing → spec sem lacunas | Claude Projects |
 | `03-prompt-claude-ia.md` | Spec → workspace do Claude Code (`CLAUDE.md` + fases) | Claude Projects |

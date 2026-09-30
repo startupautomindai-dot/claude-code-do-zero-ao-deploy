@@ -29,6 +29,7 @@ Você não precisa saber programar. Só precisa seguir a ordem dos arquivos e co
 | 00a-INFRA-DO-ZERO.md | Pra quem não tem nada ainda: VPS (preços e specs), instalar Claude Code, Supabase self-hosted, n8n |
 | 00-CONTEXTO-INFRAESTRUTURA.md | Descreve seu ambiente (GitHub, VPS, Supabase, n8n, Cloudflare, e-mail) |
 | 00b-ACESSO-CLAUDE-CODE.md | Ensina a dar acesso de verdade a cada serviço (GitHub, VPS, Cloudflare, n8n, Supabase) e traz um prompt pra testar tudo |
+| 00c-GUIA-DE-BOLSO-STACK.md | Para que serve cada linguagem e ferramenta (HTML/CSS/JS, React, Next, PWA, Node, Python, n8n, Supabase) e como escolher a stack de cada projeto |
 | 01-PROMPT-DEEPSEEK.md | Instrução para o DeepSeek gerar o rascunho |
 | 02-ARQUITETO-SENIOR-REFORMULADOR.md | Instrução para o Claude reformular o rascunho |
 | 03-PROMPT-CLAUDE-IA.md | Instrução para o Claude gerar o workspace do Claude Code |
@@ -70,6 +71,7 @@ PROMPTS-LIVE/
 ├── 00a-INFRA-DO-ZERO.md
 ├── 00-CONTEXTO-INFRAESTRUTURA.md
 ├── 00b-ACESSO-CLAUDE-CODE.md
+├── 00c-GUIA-DE-BOLSO-STACK.md
 ├── 01-PROMPT-DEEPSEEK.md
 ├── 02-ARQUITETO-SENIOR-REFORMULADOR.md
 ├── 03-PROMPT-CLAUDE-IA.md
@@ -117,7 +119,11 @@ Decida o que vai construir. Exemplos:
 - Plataforma de cursos
 - App de finanças pessoais
 
-### Passo 0.4 — Dê acesso de verdade ao Claude Code
+### Passo 0.4 — Leia o guia de bolso da stack
+
+Abra o 00c-GUIA-DE-BOLSO-STACK.md (5 minutos). Ele explica para que serve cada linguagem e ferramenta e quando usar cada uma. Você não precisa decorar: precisa conseguir conferir se a escolha da IA na Etapa 1 faz sentido.
+
+### Passo 0.5 — Dê acesso de verdade ao Claude Code
 
 Ter a credencial anotada não é a mesma coisa que o Claude Code conseguir usá-la. Abra o 00b-ACESSO-CLAUDE-CODE.md e siga a configuração de cada serviço que seu projeto vai precisar (GitHub, VPS, Cloudflare, n8n, Supabase). No final desse arquivo tem um prompt pronto pra colar no Claude Code e testar tudo de uma vez, antes de seguir pra Etapa 1.
 
@@ -137,9 +143,9 @@ Abra o arquivo, copie TODO o conteúdo e cole no chat. Envie.
 
 O DeepSeek vai responder algo como: "Entendido. Descreva seu projeto."
 
-### Passo 1.3 — Anexe o 00-CONTEXTO-INFRAESTRUTURA.md
+### Passo 1.3 — Anexe o 00-CONTEXTO-INFRAESTRUTURA.md e o 00c-GUIA-DE-BOLSO-STACK.md
 
-Clique no clipe 📎 e anexe o arquivo.
+Clique no clipe 📎 e anexe os dois arquivos. O guia de bolso é o critério que a IA usa pra escolher frontend, backend e linguagens do seu projeto (seção 3 do briefing). Se duas opções empatarem, ela pergunta a você antes de fechar.
 
 ### Passo 1.4 — Descreva o projeto
 
